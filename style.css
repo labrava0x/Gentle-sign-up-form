@@ -1,0 +1,171 @@
+/* --- Monochrome Dalmatian Palette & Base Setup --- */
+:root {
+    --bg-pure: #ffffff;
+    --bg-offwhite: #f7f7f7;
+    --ink-black: #111111;
+    --graphite: #333333;
+    --border-gray: #d0d0d0;
+    --spot-color: rgba(17, 17, 17, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-pure);
+    color: var(--ink-black);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+    
+    /* Custom Ink-Black Radial-Gradient Dalmatian Spot Margin Background */
+    background-image: 
+        radial-gradient(circle at 10% 15%, var(--spot-color) 0%, var(--spot-color) 4%, transparent 5%),
+        radial-gradient(circle at 85% 25%, var(--spot-color) 0%, var(--spot-color) 6%, transparent 7%),
+        radial-gradient(circle at 15% 75%, var(--spot-color) 0%, var(--spot-color) 5%, transparent 6%),
+        radial-gradient(circle at 90% 85%, var(--spot-color) 0%, var(--spot-color) 8%, transparent 9%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+/* --- Wiki Wrapper --- */
+.wiki-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--bg-pure);
+    border: 1px solid var(--border-gray);
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* --- Header --- */
+.wiki-header {
+    border-bottom: 2px solid var(--ink-black);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.wiki-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--ink-black);
+}
+
+.wiki-subtitle {
+    font-size: 1.05rem;
+    color: var(--graphite);
+    margin-top: 8px;
+}
+
+/* --- Infobox --- */
+.infobox-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.infobox {
+    background: var(--bg-offwhite);
+    border: 1px solid var(--border-gray);
+    padding: 20px;
+    width: 320px;
+    font-size: 0.9rem;
+}
+
+.infobox h3 {
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border-gray);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infobox ul {
+    list-style: none;
+}
+
+.infobox li {
+    margin-bottom: 8px;
+}
+
+/* --- Wiki Table --- */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.wiki-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.92rem;
+}
+
+.wiki-table th, 
+.wiki-table td {
+    padding: 14px 16px;
+    border: 1px solid var(--border-gray);
+    vertical-align: top;
+}
+
+.wiki-table th {
+    background-color: var(--ink-black);
+    color: var(--bg-pure);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.wiki-table tr:nth-child(even) {
+    background-color: var(--bg-offwhite);
+}
+
+.wiki-table tr:hover {
+    background-color: #f0f0f0;
+}
+
+.highlight-row {
+    background-color: #fafafa !important;
+    border-left: 3px solid var(--ink-black);
+}
+
+/* --- Footer --- */
+.wiki-footer {
+    border-top: 1px solid var(--border-gray);
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: var(--graphite);
+}
+
+/* Breadcrumbs for navigation */
+.wiki-breadcrumbs {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: var(--graphite);
+}
+
+.wiki-breadcrumbs a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.wiki-breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
