@@ -1,171 +1,299 @@
-/* --- Monochrome Dalmatian Palette & Base Setup --- */
+/* ==========================================================================
+   Gentle Productions x La Brava - Dual Aesthetic Stylesheet
+   ========================================================================== */
+
 :root {
-    --bg-pure: #ffffff;
-    --bg-offwhite: #f7f7f7;
-    --ink-black: #111111;
-    --graphite: #333333;
-    --border-gray: #d0d0d0;
-    --spot-color: rgba(17, 17, 17, 0.08);
+    /* La Brava Palette */
+    --pink-neon: #ff1493;
+    --pink-glow: rgba(255, 20, 147, 0.4);
+    --pink-light: #ff69b4;
+    
+    /* Gentle Criminal Palette */
+    --purple-dark: #0d0714;
+    --purple-deep: #190a26;
+    --purple-card: #251038;
+    --purple-accent: #4c1d95;
+    --gold-accent: #f4d03f;
+    --gold-glow: rgba(244, 208, 63, 0.3);
+    --silver-text: #e2e8f0;
+    --lavender-light: #d8b4fe;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: var(--bg-pure);
-    color: var(--ink-black);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    padding: 40px 20px;
-    
-    /* Custom Ink-Black Radial-Gradient Dalmatian Spot Margin Background */
-    background-image: 
-        radial-gradient(circle at 10% 15%, var(--spot-color) 0%, var(--spot-color) 4%, transparent 5%),
-        radial-gradient(circle at 85% 25%, var(--spot-color) 0%, var(--spot-color) 6%, transparent 7%),
-        radial-gradient(circle at 15% 75%, var(--spot-color) 0%, var(--spot-color) 5%, transparent 6%),
-        radial-gradient(circle at 90% 85%, var(--spot-color) 0%, var(--spot-color) 8%, transparent 9%);
-    background-size: 100% 100%;
-    background-attachment: fixed;
-}
-
-/* --- Wiki Wrapper --- */
-.wiki-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    background: var(--bg-pure);
-    border: 1px solid var(--border-gray);
-    padding: 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-}
-
-/* --- Header --- */
-.wiki-header {
-    border-bottom: 2px solid var(--ink-black);
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-}
-
-.wiki-header h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: var(--ink-black);
-}
-
-.wiki-subtitle {
-    font-size: 1.05rem;
-    color: var(--graphite);
-    margin-top: 8px;
-}
-
-/* --- Infobox --- */
-.infobox-container {
+    background-color: var(--purple-dark);
+    color: var(--silver-text);
+    min-height: 100vh;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(255, 20, 147, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(76, 29, 149, 0.2) 0%, transparent 45%);
 }
 
-.infobox {
-    background: var(--bg-offwhite);
-    border: 1px solid var(--border-gray);
-    padding: 20px;
-    width: 320px;
-    font-size: 0.9rem;
+.page-wrapper {
+    display: flex;
+    width: 95%;
+    max-width: 1400px;
+    min-height: 85vh;
+    background: var(--purple-deep);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.25), 0 0 20px rgba(76, 29, 149, 0.4);
+    border: 1px solid rgba(244, 208, 63, 0.35);
 }
 
-.infobox h3 {
+/* --------------------------------------------------------------------------
+   Left Hero Panel (Gentle Imperial Royalty + La Brava Cyber-Stream)
+   -------------------------------------------------------------------------- */
+.hero-panel {
+    flex: 1.2;
+    background: linear-gradient(135deg, #12071a 0%, #220d33 100%);
+    padding: 3rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(244, 208, 63, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo-container h1 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: var(--gold-accent);
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px var(--gold-glow);
+}
+
+.broadcast-badge {
+    background: var(--pink-neon);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    box-shadow: 0 0 8px var(--pink-glow);
+}
+
+.welcome-speech {
+    background: rgba(13, 7, 20, 0.7);
+    padding: 1.8rem 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--gold-accent);
+    border-right: 2px solid var(--pink-neon);
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-speech p {
+    line-height: 1.6;
+    margin-bottom: 1.1rem;
     font-size: 1rem;
-    border-bottom: 1px solid var(--border-gray);
-    padding-bottom: 8px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: var(--lavender-light);
 }
 
-.infobox ul {
-    list-style: none;
+.welcome-speech p:last-child {
+    margin-bottom: 0;
 }
 
-.infobox li {
-    margin-bottom: 8px;
+.welcome-speech .quote-opening {
+    font-style: italic;
+    color: var(--lavender-light);
+    font-size: 0.95rem;
 }
 
-/* --- Wiki Table --- */
-.table-container {
-    overflow-x: auto;
-    margin-bottom: 30px;
+.quote-pink {
+    color: var(--pink-light);
 }
 
-.wiki-table {
+.welcome-speech strong {
+    color: var(--gold-accent);
+}
+
+.welcome-speech em {
+    color: var(--pink-light);
+}
+
+.call-to-action-line {
+    font-weight: bold;
+    color: var(--pink-neon) !important;
+    text-shadow: 0 0 8px var(--pink-glow);
+}
+
+.site-credit {
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--lavender-light);
+}
+
+.site-credit strong {
+    color: var(--pink-neon);
+}
+
+/* --------------------------------------------------------------------------
+   Right Form Panel (Credentials & Input Fields)
+   -------------------------------------------------------------------------- */
+.form-panel {
+    flex: 1;
+    background: var(--purple-deep);
+    padding: 3rem 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-container {
     width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+}
+
+.form-header h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: var(--gold-accent);
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 8px var(--gold-glow);
+}
+
+.form-header p {
+    color: var(--lavender-light);
     font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.8rem;
 }
 
-.wiki-table th, 
-.wiki-table td {
-    padding: 14px 16px;
-    border: 1px solid var(--border-gray);
-    vertical-align: top;
+.header-callout {
+    color: var(--pink-neon);
+    font-weight: bold;
+    text-shadow: 0 0 8px var(--pink-glow);
 }
 
-.wiki-table th {
-    background-color: var(--ink-black);
-    color: var(--bg-pure);
-    font-weight: 600;
+.form-row {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.1rem;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.72rem;
+    font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    color: var(--lavender-light);
+    margin-bottom: 0.4rem;
 }
 
-.wiki-table tr:nth-child(even) {
-    background-color: var(--bg-offwhite);
+.input-group input {
+    background: var(--purple-card);
+    border: 1.5px solid var(--purple-accent);
+    border-radius: 6px;
+    padding: 0.7rem 0.9rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.25s ease;
 }
 
-.wiki-table tr:hover {
-    background-color: #f0f0f0;
+.input-group input:focus {
+    border-color: var(--pink-neon);
+    box-shadow: 0 0 10px var(--pink-glow);
+    background: #2e1245;
 }
 
-.highlight-row {
-    background-color: #fafafa !important;
-    border-left: 3px solid var(--ink-black);
+/* Form Validation Pseudo-classes */
+.input-group input:focus:invalid {
+    border-color: #ef4444;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
 }
 
-/* --- Footer --- */
-.wiki-footer {
-    border-top: 1px solid var(--border-gray);
-    padding-top: 20px;
-    font-size: 0.9rem;
-    color: var(--graphite);
+.input-group input:valid {
+    border-color: var(--gold-accent);
 }
 
-/* Breadcrumbs for navigation */
-.wiki-breadcrumbs {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    color: var(--graphite);
+.error-message {
+    font-size: 0.75rem;
+    color: #f87171;
+    margin-top: 0.25rem;
+    min-height: 0.9rem;
 }
 
-.wiki-breadcrumbs a {
-    color: inherit;
+/* Submit Actions */
+.form-actions {
+    margin-top: 1.4rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: linear-gradient(90deg, var(--pink-neon) 0%, #d946ef 100%);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--pink-glow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(255, 20, 147, 0.8);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--lavender-light);
+}
+
+.login-link a {
+    color: var(--gold-accent);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
 }
 
-.wiki-breadcrumbs a:hover {
+.login-link a:hover {
+    color: var(--pink-light);
     text-decoration: underline;
 }
 
-.back-link {
-    color: inherit;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.back-link:hover {
-    text-decoration: underline;
+/* Responsive Layout */
+@media (max-width: 950px) {
+    .page-wrapper {
+        flex-direction: column;
+    }
+    .hero-panel {
+        border-right: none;
+        border-bottom: 1px solid rgba(244, 208, 63, 0.2);
+        padding: 1.8rem;
+    }
+    .form-panel {
+        padding: 1.8rem;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 1.1rem;
+    }
 }
