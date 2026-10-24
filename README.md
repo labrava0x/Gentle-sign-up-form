@@ -6,7 +6,9 @@ Don't get me wrong, the Odin template is lovely! It is great, and I am all in fo
 
 A custom, highly stylized sign-up form web application inspired by the chaotic, devoted, and theatrical universe of **Gentle Criminal** and **La Brava** from *My Hero Academia* (*Boku no Hero Academia*). The fictional La Brava, and Gentle Criminal are characters that are part of My Hero of Academia, and belongs to the author Kohei Horikoshi. For all purposes, please consider this as what it is: a fanart project/project for the assignment made with lots of love! Of course, I would have loved to dedicate time to make a Gentle Criminal fanart drawing to add to it, but that would have taken time from moving forward in the Odin Project, and I can only dedicate my time to the code. That is why, I turned to SVG once more to make my custom icon branding. So, what do you say, will you join Gentle Criminal-sama's fan club, and sponsor him? ~😉
 
-Built as part of The Odin Project curriculum, this project transforms a standard developer form into an immersive broadcast panel straight from Gentle's YouTube channel, complete with custom SVG branding, royal color palettes, and precise responsive layouts.
+Without further ado, allow me the process for this architextural heist that allowed this to make it possible:
+
+Once more, I built as part of The Odin Project curriculum, this project transforms a standard developer form into an immersive broadcast panel straight from Gentle's YouTube channel, complete with custom SVG branding, royal color palettes, and precise responsive layouts. All with the elegance of the royal imperial tea in mind! Feel the love!
 
 ---
 
