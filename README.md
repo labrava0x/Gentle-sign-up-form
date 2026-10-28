@@ -33,6 +33,9 @@ Once more, I built as part of The Odin Project curriculum, this project transfor
 3. **Client-Side Form Validation (`script`):**
    * Integrated native HTML5 validation constraints alongside a custom JavaScript password-matching check to handle feedback styling cleanly.
 
+4. ** I went even further than what the curriculum asked, and I searched how to establish a solid front-end baseline with real-time input sanitization, native HTML5 validation integration, password matching checks, and a submission cooldown timer
+
+
 ---
 
 ## 👥 Characters & Universe

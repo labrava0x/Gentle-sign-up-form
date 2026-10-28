@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Gentle Criminal's Inner Circle | Imperial Royal Tea & Merchandise</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Cloudflare Turnstile API -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
     <div class="page-wrapper">
@@ -63,18 +66,18 @@
                     <div class="form-row">
                         <div class="input-group">
                             <label for="first_name">First Name</label>
-                            <input type="text" id="first_name" name="first_name" pattern="[A-Za-z\s]+" title="Names should only contain letters." required[cite: 4]>
+                            <input type="text" id="first_name" name="first_name" pattern="[A-Za-z\s]+" title="Names should only contain letters." required>
                         </div>
                         <div class="input-group">
                             <label for="last_name">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" pattern="[A-Za-z\s]+" title="Last names should only contain letters—no random digits!" required[cite: 4]>
+                            <input type="text" id="last_name" name="last_name" pattern="[A-Za-z\s]+" title="Last names should only contain letters—no random digits!" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required[cite: 3]>
+                            <input type="email" id="email" name="email" required>
                         </div>
                         <div class="input-group">
                             <label for="phone">Phone Number</label>
@@ -94,6 +97,15 @@
                             <span class="error-message"></span>
                         </div>
                     </div>
+
+                    <!-- Hidden Honeypot Field for bots -->
+                    <div style="display:none;" aria-hidden="true">
+                        <label for="website_hp">Website</label>
+                        <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <!-- Cloudflare Turnstile Widget -->
+                    <div class="cf-turnstile" data-sitekey="YOUR_CLOUDFLARE_SITE_KEY" data-theme="dark"></div>
 
                     <div class="form-actions">
                         <button type="submit" class="submit-btn">Create Account</button>

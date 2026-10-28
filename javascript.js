@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------------------------
-    // 3. Client-Side Cooldown / Rate-Limiting Logic
+    // 3. Client-Side Cooldown / Rate-Limiting & Anti-Spam Logic
     // ----------------------------------------------------------------------
     const form = document.getElementById('signup-form');
     const submitBtn = document.querySelector('.submit-btn');
@@ -67,6 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form && submitBtn) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // ----------------------------------------------------------
+            // A. Honeypot Anti-Spam Check
+            // ----------------------------------------------------------
+            const honeypot = document.getElementById('website_hp');
+            if (honeypot && honeypot.value !== '') {
+                // Silently block bots while pretending it succeeded
+                console.warn('Spam bot detected via honeypot field.');
+                form.reset();
+                return;
+            }
+
+            // ----------------------------------------------------------
+            // B. Cloudflare Turnstile Verification Check
+            // ----------------------------------------------------------
+            const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
+            if (turnstileResponse && !turnstileResponse.value) {
+                alert('Please complete the security check to continue.');
+                return;
+            }
 
             // Ensure native HTML5 validation passes first
             if (!form.checkValidity()) {
@@ -94,8 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         clearInterval(countdown);
                         submitBtn.disabled = false;
                         submitBtn.style.background = ''; // Reset gradient
-                        submitBtn.textContent = 'CREATE ACCOUNT';
+                        submitBtn.textContent = 'Create Account';
                         isCoolingDown = false;
+
+                        // Reset Turnstile widget for subsequent submissions
+                        if (typeof turnstile !== 'undefined') {
+                            turnstile.reset();
+                        }
                     }
                 }, 1000);
             }, 1000);
