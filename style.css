@@ -18,6 +18,7 @@
     --silver-text: #e2e8f0;
     --lavender-light: #d8b4fe;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -296,8 +297,9 @@ body {
         gap: 1.1rem;
     }
 }
+
 /* --------------------------------------------------------------------------
-   Cloudflare Turnstile & Troubleshoot Link Customization
+   Cloudflare Turnstile Customization (Gold Theme Force)
    -------------------------------------------------------------------------- */
 .cf-turnstile {
     margin: 1.25rem 0;
@@ -306,10 +308,10 @@ body {
     width: 100%;
 }
 
-/* Force Cloudflare's fallback/troubleshoot link to match your gold aesthetic */
-.cf-turnstile iframe body a, 
-.cf-turnstile a,
-#cf-stage a {
+/* Force all text, links, or fallback error elements inside/around Turnstile to Gold */
+.cf-turnstile, 
+.cf-turnstile *,
+.cf-turnstile a {
     color: var(--gold-accent) !important;
     text-decoration: none;
     transition: color 0.2s ease;
