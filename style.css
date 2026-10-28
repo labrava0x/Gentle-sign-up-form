@@ -18,7 +18,6 @@
     --silver-text: #e2e8f0;
     --lavender-light: #d8b4fe;
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -296,4 +295,28 @@ body {
         flex-direction: column;
         gap: 1.1rem;
     }
+}
+/* --------------------------------------------------------------------------
+   Cloudflare Turnstile & Troubleshoot Link Customization
+   -------------------------------------------------------------------------- */
+.cf-turnstile {
+    margin: 1.25rem 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Force Cloudflare's fallback/troubleshoot link to match your gold aesthetic */
+.cf-turnstile iframe body a, 
+.cf-turnstile a,
+#cf-stage a {
+    color: var(--gold-accent) !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.cf-turnstile a:hover {
+    color: var(--pink-light) !important;
+    text-decoration: underline;
+    text-shadow: 0 0 8px var(--pink-glow);
 }
